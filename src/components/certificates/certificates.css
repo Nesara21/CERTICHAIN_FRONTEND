@@ -1,0 +1,346 @@
+/* Certificate General Styles */
+.certificate-container {
+    width: 297mm;
+    /* A4 Landscape */
+    height: 210mm;
+    background-color: #fff;
+    padding: 10mm;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', serif;
+    color: #333;
+    position: relative;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.certificate-border {
+    width: 100%;
+    height: 100%;
+    border: 5px double #1a237e;
+    /* Deep Blue */
+    padding: 10mm;
+    box-sizing: border-box;
+    position: relative;
+    background-image: radial-gradient(circle at center, rgba(240, 248, 255, 0.5) 0%, rgba(255, 255, 255, 0) 70%);
+}
+
+.certificate-content {
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Header */
+.header {
+    margin-bottom: 20px;
+}
+
+.logo-placeholder {
+    width: 60px;
+    height: 60px;
+    background: #e0e0e0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+    font-size: 10px;
+    color: #666;
+}
+
+.institute-name {
+    font-size: 28px;
+    font-weight: bold;
+    color: #1a237e;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.institute-address {
+    font-size: 12px;
+    color: #666;
+}
+
+/* Body */
+.body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.title {
+    font-size: 36px;
+    color: #d4af37;
+    /* Gold */
+    margin: 10px 0;
+    font-family: 'Pinyon Script', cursive;
+    /* Or a nice serif */
+}
+
+.subtitle {
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.student-name {
+    font-size: 32px;
+    color: #000;
+    margin: 15px 0;
+    border-bottom: 1px solid #ccc;
+    display: inline-block;
+    padding: 0 20px;
+    font-family: 'Great Vibes', cursive;
+    /* Or script font */
+}
+
+.course-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #333;
+}
+
+.text {
+    font-size: 16px;
+    line-height: 1.5;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.description {
+    font-size: 14px;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* Footer */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 30px;
+    padding: 0 40px;
+}
+
+.signature-block {
+    text-align: center;
+    width: 150px;
+}
+
+.signature-line {
+    border-top: 1px solid #333;
+    margin-bottom: 5px;
+    height: 1px;
+}
+
+.signatory {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.date-block {
+    text-align: center;
+    font-size: 12px;
+}
+
+.qr-code {
+    width: 80px;
+    height: 80px;
+    margin: 5px 0;
+}
+
+.cert-id {
+    font-family: monospace;
+    font-size: 10px;
+    color: #777;
+}
+
+/* Certificate General Styles */
+.certificate-container {
+    width: 297mm;
+    /* A4 Landscape */
+    height: 210mm;
+    background-color: #fff;
+    padding: 10mm;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', serif;
+    color: #333;
+    position: relative;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.certificate-border {
+    width: 100%;
+    height: 100%;
+    border: 5px double #1a237e;
+    /* Deep Blue */
+    padding: 10mm;
+    box-sizing: border-box;
+    position: relative;
+    background-image: radial-gradient(circle at center, rgba(240, 248, 255, 0.5) 0%, rgba(255, 255, 255, 0) 70%);
+}
+
+.certificate-content {
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Header */
+.header {
+    margin-bottom: 20px;
+}
+
+.logo-placeholder {
+    width: 60px;
+    height: 60px;
+    background: #e0e0e0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+    font-size: 10px;
+    color: #666;
+}
+
+.institute-name {
+    font-size: 28px;
+    font-weight: bold;
+    color: #1a237e;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.institute-address {
+    font-size: 12px;
+    color: #666;
+}
+
+/* Body */
+.body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.title {
+    font-size: 36px;
+    color: #d4af37;
+    /* Gold */
+    margin: 10px 0;
+    font-family: 'Pinyon Script', cursive;
+    /* Or a nice serif */
+}
+
+.subtitle {
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.student-name {
+    font-size: 32px;
+    color: #000;
+    margin: 15px 0;
+    border-bottom: 1px solid #ccc;
+    display: inline-block;
+    padding: 0 20px;
+    font-family: 'Great Vibes', cursive;
+    /* Or script font */
+}
+
+.course-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #333;
+}
+
+.text {
+    font-size: 16px;
+    line-height: 1.5;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.description {
+    font-size: 14px;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* Footer */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 30px;
+    padding: 0 40px;
+}
+
+.signature-block {
+    text-align: center;
+    width: 150px;
+}
+
+.signature-line {
+    border-top: 1px solid #333;
+    margin-bottom: 5px;
+    height: 1px;
+}
+
+.signatory {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.date-block {
+    text-align: center;
+    font-size: 12px;
+}
+
+.qr-code {
+    width: 80px;
+    height: 80px;
+    margin: 5px 0;
+}
+
+.cert-id {
+    font-family: monospace;
+    font-size: 10px;
+    color: #777;
+}
+
+/* Specific Template Tweaks */
+.degree-certificate .title {
+    color: #1a237e;
+}
+
+/* Print Styles */
+@media print {
+    @page {
+        size: landscape;
+        margin: 0;
+    }
+
+    body {
+        margin: 0;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .certificate-container {
+        box-shadow: none;
+        width: 100%;
+        height: 100vh;
+    }
+}
