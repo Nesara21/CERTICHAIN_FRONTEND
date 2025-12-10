@@ -443,7 +443,7 @@ function StudentDashboard({ user, onLogout }) {
             let htmlContent = await templateRes.text();
 
             // Fetch and inline CSS
-            const cssRes = await fetch('https://certichain-backend-x2zk.onrender.com/templates/styles.css');
+            const cssRes = await fetch('templates/styles.css');
             const cssContent = await cssRes.text();
             htmlContent = htmlContent.replace('<link rel="stylesheet" href="styles.css">', `<style>${cssContent}</style>`);
 
