@@ -439,7 +439,7 @@ function StudentDashboard({ user, onLogout }) {
             if (!filename) throw new Error('Template not found');
 
             // Fetch HTML template
-            const templateRes = await fetch(`https://certichain-backend-x2zk.onrender.com/templates/${filename}`);
+            const templateRes = await fetch(`templates/${filename}`);
             let htmlContent = await templateRes.text();
 
             // Fetch and inline CSS
