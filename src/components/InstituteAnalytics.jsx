@@ -11,7 +11,7 @@ function InstituteAnalytics({ user, onLogout }) {
 
     const fetchAnalytics = async () => {
         try {
-            const res = await fetch('/api/institute/analytics', {
+            const res = await fetch('https://certichain-backend-x2zk.onrender.com/api/institute/analytics', {
                 headers: { 'Authorization': `Bearer ${user.token}` }
             });
             if (res.ok) {
