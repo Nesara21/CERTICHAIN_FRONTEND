@@ -118,7 +118,7 @@ function Signup() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await fetch('/api/auth/signup', {
+            const res = await fetch('https://certichain-backend-x2zk.onrender.com/api/auth/signup', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username, password, email, role: 'student' }),
@@ -160,7 +160,7 @@ function InstituteSignup() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await fetch('/api/auth/signup', {
+            const res = await fetch('https://certichain-backend-x2zk.onrender.com/api/auth/signup', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username, password, email, role: 'institute' }),
@@ -204,14 +204,14 @@ function InstituteDashboard({ user, onLogout }) {
     }, []);
 
     const fetchTemplates = async () => {
-        const res = await fetch('/api/institute/templates', {
+        const res = await fetch('https://certichain-backend-x2zk.onrender.com/api/institute/templates', {
             headers: { 'Authorization': `Bearer ${user.token}` }
         });
         if (res.ok) setTemplates(await res.json());
     };
 
     const fetchRequests = async () => {
-        const res = await fetch('/api/institute/requests', {
+        const res = await fetch('https://certichain-backend-x2zk.onrender.com/api/institute/requests', {
             headers: { 'Authorization': `Bearer ${user.token}` }
         });
         if (res.ok) setRequests(await res.json());
@@ -220,7 +220,7 @@ function InstituteDashboard({ user, onLogout }) {
     const createTemplate = async (e) => {
         e.preventDefault();
         try {
-            const res = await fetch('/api/institute/templates', {
+            const res = await fetch('https://certichain-backend-x2zk.onrender.com/api/institute/templates', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -244,7 +244,7 @@ function InstituteDashboard({ user, onLogout }) {
 
     const handleRequest = async (id, status) => {
         try {
-            const res = await fetch(`/api/institute/requests/${id}`, {
+            const res = await fetch(`https://certichain-backend-x2zk.onrender.com/api/institute/requests/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -352,21 +352,21 @@ function StudentDashboard({ user, onLogout }) {
     }, []);
 
     const fetchTemplates = async () => {
-        const res = await fetch('/api/student/templates', {
+        const res = await fetch('https://certichain-backend-x2zk.onrender.com/api/student/templates', {
             headers: { 'Authorization': `Bearer ${user.token}` }
         });
         if (res.ok) setTemplates(await res.json());
     };
 
     const fetchRequests = async () => {
-        const res = await fetch('/api/student/requests', {
+        const res = await fetch('https://certichain-backend-x2zk.onrender.com/api/student/requests', {
             headers: { 'Authorization': `Bearer ${user.token}` }
         });
         if (res.ok) setMyRequests(await res.json());
     };
 
     const requestCertificate = async (templateId) => {
-        const res = await fetch('/api/student/requests', {
+        const res = await fetch('https://certichain-backend-x2zk.onrender.com/api/student/requests', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -384,7 +384,7 @@ function StudentDashboard({ user, onLogout }) {
         setDownloading(true);
         try {
             // Fetch certificate data
-            const res = await fetch(`/api/student/certificate/${requestId}`, {
+            const res = await fetch(`https://certichain-backend-x2zk.onrender.com/api/student/certificate/${requestId}`, {
                 headers: { 'Authorization': `Bearer ${user.token}` }
             });
             if (!res.ok) throw new Error('Failed to fetch certificate data');
@@ -404,7 +404,7 @@ function StudentDashboard({ user, onLogout }) {
             let qrCodeUrl = '';
             if (data.certificate_hash) {
                 try {
-                    const qrRes = await fetch(`/api/qrcode/${data.certificate_hash}`, {
+                    const qrRes = await fetch(`https://certichain-backend-x2zk.onrender.com/api/qrcode/${data.certificate_hash}`, {
                         headers: { 'Authorization': `Bearer ${user.token}` }
                     });
                     if (qrRes.ok) {
@@ -438,11 +438,11 @@ function StudentDashboard({ user, onLogout }) {
             if (!filename) throw new Error('Template not found');
 
             // Fetch HTML template
-            const templateRes = await fetch(`/templates/${filename}`);
+            const templateRes = await fetch(`https://certichain-backend-x2zk.onrender.com/templates/${filename}`);
             let htmlContent = await templateRes.text();
 
             // Fetch and inline CSS
-            const cssRes = await fetch('/templates/styles.css');
+            const cssRes = await fetch('https://certichain-backend-x2zk.onrender.com/templates/styles.css');
             const cssContent = await cssRes.text();
             htmlContent = htmlContent.replace('<link rel="stylesheet" href="styles.css">', `<style>${cssContent}</style>`);
 
@@ -632,7 +632,7 @@ function VerificationPage() {
     useEffect(() => {
         const verify = async () => {
             try {
-                const res = await fetch(`/api/verify/${hash}`);
+                const res = await fetch(`https://certichain-backend-x2zk.onrender.com/api/verify/${hash}`);
                 const data = await res.json();
                 setVerificationResult(data);
             } catch (e) {
@@ -698,7 +698,7 @@ function ForgotPassword() {
         setPreviewUrl('');
 
         try {
-            const res = await fetch('/api/auth/forgot-password', {
+            const res = await fetch('https://certichain-backend-x2zk.onrender.com/api/auth/forgot-password', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email })
@@ -778,7 +778,7 @@ function ResetPassword() {
     useEffect(() => {
         const verifyToken = async () => {
             try {
-                const res = await fetch(`/api/auth/verify-reset-token/${token}`);
+                const res = await fetch(`https://certichain-backend-x2zk.onrender.com/api/auth/verify-reset-token/${token}`);
                 const data = await res.json();
 
                 if (data.valid) {
@@ -814,7 +814,7 @@ function ResetPassword() {
         setLoading(true);
 
         try {
-            const res = await fetch('/api/auth/reset-password', {
+            const res = await fetch('https://certichain-backend-x2zk.onrender.com/api/auth/reset-password', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ token, newPassword })
