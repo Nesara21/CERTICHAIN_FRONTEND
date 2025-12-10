@@ -56,6 +56,7 @@ function Login({ onLogin, expectedRole }) {
 
             // ENHANCED DEBUG LOGGING
             console.log('=== LOGIN DEBUG START ===');
+            console.log('Data -> ',data);
             console.log('1. Full response data:', JSON.stringify(data, null, 2));
             console.log('2. Expected role:', expectedRole);
             console.log('3. Actual role from server:', data.role);
